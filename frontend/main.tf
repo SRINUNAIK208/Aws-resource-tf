@@ -32,7 +32,7 @@ resource "aws_instance" "frontend" {
 
 resource "terraform_data" "frontend" {
   triggers_replace = [
-    aws_instance.catalogue.id
+    aws_instance.frontend.id
   ]
 
   provisioner "file" {
@@ -79,7 +79,7 @@ resource "terraform_data" "frontend_delete" {
   provisioner "local-exec"{
     command = "aws ec2 terminate-instances --instance-ids ${aws_instance.frontend.id}"
   }
-  depends_on = [aws_ami_from_frontend.catalogue]
+  depends_on = [aws_ami_from_frontend.frontend]
 }
 
 resource "aws_launch_template" "frontend" {
