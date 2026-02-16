@@ -2,7 +2,7 @@ module "backend_alb" {
   source = "terraform-aws-modules/alb/aws"
   internal = true
   version = "9.16.0"
-  name    = "${var.project}-${var.environment}-backend_alb"
+  name    = "${var.project}-${var.environment}-backend-alb"
   vpc_id  = local.vpc_id
   subnets = local.private_subnet_ids
   security_groups = [local.backend_alb_sg_id]
@@ -11,7 +11,7 @@ module "backend_alb" {
   tags = merge(
     local.common_tags,
     {
-        Name="${var.project}-${var.environment}-backend_alb"
+        Name="${var.project}-${var.environment}-backend-alb"
     }
   )
 }
