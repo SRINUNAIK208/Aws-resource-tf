@@ -2,7 +2,7 @@ module "frontend_alb" {
   source = "terraform-aws-modules/alb/aws"
   internal = true
   version = "9.16.0"
-  name    = "${var.project}-${var.environment}-frontend_alb"
+  name    = "${var.project}-${var.environment}-frontend-alb"
   vpc_id  = local.vpc_id
   subnets = local.public_subnet_ids
   security_groups = [local.frontend_alb_sg_id]
@@ -11,7 +11,7 @@ module "frontend_alb" {
   tags = merge(
     local.common_tags,
     {
-        Name="${var.project}-${var.environment}-frontend_alb"
+        Name="${var.project}-${var.environment}-frontend-alb"
     }
   )
 }
