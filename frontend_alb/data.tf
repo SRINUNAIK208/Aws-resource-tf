@@ -1,5 +1,5 @@
 data "aws_ssm_parameter" "aws_acm_certificate" {
-  name = name  = "/${var.project}/${var.environment}/aws_acm_certificate"
+  name  = "/${var.project}/${var.environment}/aws_acm_certificate"
 }
 data "aws_ssm_parameter" "vpc_id" {
   name =  "/${var.project}/${var.environment}/vpc_id"
