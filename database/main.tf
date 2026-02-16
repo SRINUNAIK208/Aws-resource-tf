@@ -38,7 +38,7 @@ resource "terraform_data" "bootstrap" {
 }
 
 resource "aws_route53_record" "mongodb" {
-  zone_id = local.zone_id
+  zone_id = var.zone_id
   name    = "mongodb-${var.environment}.${var.zone_name}"
   type    = "A"
   ttl     = 120
