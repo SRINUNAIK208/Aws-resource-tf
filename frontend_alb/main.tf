@@ -1,6 +1,6 @@
 module "frontend_alb" {
   source = "terraform-aws-modules/alb/aws"
-  internal = true
+  internal = false
   version = "9.16.0"
   name    = "${var.project}-${var.environment}-frontend-alb"
   vpc_id  = local.vpc_id
