@@ -148,7 +148,7 @@ resource "aws_autoscaling_group" "catalogue" {
     preferences {
       min_healthy_percentage = 50
     }
-    triggers = ["lunch_template"]
+    triggers = ["launch_template"]
   }
     timeouts{
     delete = "15m"
