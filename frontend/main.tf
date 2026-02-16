@@ -79,7 +79,7 @@ resource "terraform_data" "frontend_delete" {
   provisioner "local-exec"{
     command = "aws ec2 terminate-instances --instance-ids ${aws_instance.frontend.id}"
   }
-  depends_on = [aws_ami_from_frontend.frontend]
+  depends_on = [aws_ami_from_instance.frontend]
 }
 
 resource "aws_launch_template" "frontend" {
