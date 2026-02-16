@@ -79,6 +79,7 @@ resource "terraform_data" "catalogue_delete" {
   provisioner "local-exec"{
     command = "aws ec2 terminate-instances --instance-ids ${aws_instance.catalogue.id}"
   }
+  depends_on = [aws_ami_from_instance.catalogue]
 }
 
 resource "aws_launch_template" "catalogue" {
@@ -99,7 +100,7 @@ resource "aws_launch_template" "catalogue" {
    )
   }
    tag_specifications {
-    resource_type = "instance"
+    resource_type = "volume"
 
     tags =  merge(
     local.common_tags,
@@ -123,7 +124,10 @@ resource "aws_autoscaling_group" "catalogue" {
   desired_capacity   = 1
   max_size           = 5
   min_size           = 1  
-
+  target_group_arns = [aws_lb_target_group.catalogue.arn]
+  vpc_zone_identifier  = local.private_subnet_ids
+  health_check_grace_period = 90
+  health_check_type         = "ELB"
   launch_template {
     id      = aws_launch_template.catalogue.id
     version = aws_launch_template.catalogue.latest_version
