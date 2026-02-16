@@ -11,7 +11,7 @@ module "backend_alb" {
   tags = merge(
     local.common_tags,
     {
-        Name="${var.project}-${var.environment}-backed_Alb"
+        Name="${var.project}-${var.environment}-backend_alb"
     }
   )
 }
@@ -34,7 +34,7 @@ resource "aws_lb_listener" "backend_alb" {
 }
 
 
-resource "aws_route53_record" "www" {
+resource "aws_route53_record" "backend_Alb" {
   zone_id = var.zone_id
   name    = "*.backend-dev.${var.zone_name}"
   type    = "A"
