@@ -1,5 +1,5 @@
 module "bastion" {
-    source = "../../aws-security-group-tf"
+    source =  "git::https://github.com/SRINUNAIK208/aws-security-group-tf.git?ref=main"
     project = "roboshop"
     environment = "dev"
     sg_name = "bastion"
@@ -8,7 +8,7 @@ module "bastion" {
     
 }
 module "mongodb" {
-    source = "../../aws-security-group-tf"
+    source =  "git::https://github.com/SRINUNAIK208/aws-security-group-tf.git?ref=main"
     project = "roboshop"
     environment = "dev"
     sg_name = "mongodb"
@@ -17,7 +17,7 @@ module "mongodb" {
     
 }
 module "redis" {
-    source = "../../aws-security-group-tf"
+    source =  "git::https://github.com/SRINUNAIK208/aws-security-group-tf.git?ref=main"
     project = "roboshop"
     environment = "dev"
     sg_name = "redis"
@@ -26,7 +26,7 @@ module "redis" {
     
 }
 module "mysql" {
-    source = "../../aws-security-group-tf"
+    source =  "git::https://github.com/SRINUNAIK208/aws-security-group-tf.git?ref=main"
     project = "roboshop"
     environment = "dev"
     sg_name = "mysql"
@@ -35,7 +35,7 @@ module "mysql" {
     
 }
 module "rabbitmq" {
-    source = "../../aws-security-group-tf"
+    source =  "git::https://github.com/SRINUNAIK208/aws-security-group-tf.git?ref=main"
     project = "roboshop"
     environment = "dev"
     sg_name = "rabbitmq"
@@ -44,7 +44,7 @@ module "rabbitmq" {
     
 }
 module "frontend_alb" {
-    source = "../../aws-security-group-tf"
+    source =  "git::https://github.com/SRINUNAIK208/aws-security-group-tf.git?ref=main"
     project = "roboshop"
     environment = "dev"
     sg_name = "frontend_alb"
@@ -54,7 +54,7 @@ module "frontend_alb" {
 }
 
 module "frontend" {
-    source = "../../aws-security-group-tf"
+    source =  "git::https://github.com/SRINUNAIK208/aws-security-group-tf.git?ref=main"
     project = "roboshop"
     environment = "dev"
     sg_name = "frontend"
@@ -64,7 +64,7 @@ module "frontend" {
 }
 
 module "backend_alb" {
-    source = "../../aws-security-group-tf"
+    source =  "git::https://github.com/SRINUNAIK208/aws-security-group-tf.git?ref=main"
     project = "roboshop"
     environment = "dev"
     sg_name = "backend_alb"
@@ -73,7 +73,7 @@ module "backend_alb" {
     
 }
 module "catalogue" {
-    source = "../../aws-security-group-tf"
+    source =  "git::https://github.com/SRINUNAIK208/aws-security-group-tf.git?ref=main"
     project = "roboshop"
     environment = "dev"
     sg_name = "catalogue"
@@ -83,7 +83,7 @@ module "catalogue" {
 }
 
 module "user" {
-    source = "../../aws-security-group-tf"
+    source =  "git::https://github.com/SRINUNAIK208/aws-security-group-tf.git?ref=main"
     project = "roboshop"
     environment = "dev"
     sg_name = "user"
@@ -93,7 +93,7 @@ module "user" {
 }
 
 module "cart" {
-    source = "../../aws-security-group-tf"
+    source =  "git::https://github.com/SRINUNAIK208/aws-security-group-tf.git?ref=main"
     project = "roboshop"
     environment = "dev"
     sg_name = "cart"
@@ -103,7 +103,7 @@ module "cart" {
 }
 
 module "shipping" {
-    source = "../../aws-security-group-tf"
+    source =  "git::https://github.com/SRINUNAIK208/aws-security-group-tf.git?ref=main"
     project = "roboshop"
     environment = "dev"
     sg_name = "shipping"
@@ -113,7 +113,7 @@ module "shipping" {
 }
 
 module "payment" {
-    source = "../../aws-security-group-tf"
+    source =  "git::https://github.com/SRINUNAIK208/aws-security-group-tf.git?ref=main"
     project = "roboshop"
     environment = "dev"
     sg_name = "payment"
